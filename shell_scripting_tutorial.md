@@ -195,10 +195,10 @@ fi
 `-lt` compare if one number is less than another number  
 
 ### Note the **(())**
-`<`   is less than:             `(($a < $b))`
-`<=`  is less than or equal to: `(($a <= $b))`
-`>`   is more than:             `(($a > $b))`
-`>=`  is more than or equal to: `(($a >= $b))` 
+`<`   is less than:             `(($a < $b))`  
+`<=`  is less than or equal to: `(($a <= $b))`  
+`>`   is more than:             `(($a > $b))`  
+`>=`  is more than or equal to: `(($a >= $b))`  
 
 
 Examples  
@@ -229,9 +229,9 @@ fi
 `-z`  evaluate if string length is equal to zero  
 
 ### Note the **[[]]**
-`<`   is less than, in ASCII alphabetical order:             `[[$a < $b]]`
-`<=`  is less than or equal to, in ASCII alphabetical order: `[[$a <= $b]]`
-`>`   is more than, in ASCII alphabetical order:             `[[$a > $b]]`
+`<`   is less than, in ASCII alphabetical order:             `[[$a < $b]]`  
+`<=`  is less than or equal to, in ASCII alphabetical order: `[[$a <= $b]]`  
+`>`   is more than, in ASCII alphabetical order:             `[[$a > $b]]`  
 `>=`  is more than or equal to, in ASCII alphabetical order: `[[$a >= $b]]` 
 
 Examples:  
