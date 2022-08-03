@@ -187,22 +187,27 @@ fi
 
 ## Integer Comparison Operators 
 
--eq compare if two numbers are equal  
--ge compare if one number is greater than or equal to a number  
--le  compare if one number is less than or equal to a number  
--ne  compare if two numbers are not equal  
--gt  compare if one number is greater than another number  
--lt  compare if one number is less than another number  
+`-eq` compare if two numbers are equal  
+`-ge` compare if one number is greater than or equal to a number  
+`-le` compare if one number is less than or equal to a number  
+`-ne` compare if two numbers are not equal  
+`-gt` compare if one number is greater than another number  
+`-lt` compare if one number is less than another number  
 
+### Note the **(())**
+`<`   is less than:             `(($a < $b))`
+`<=`  is less than or equal to: `(($a <= $b))`
+`>`   is more than:             `(($a > $b))`
+`>=`  is more than or equal to: `(($a >= $b))` 
 
 
 Examples  
-[ n1 -eq n2 ]  (true if n1 same as n2, else false)  
-[ n1 -ge n2 ]  (true if n1greater then or equal to n2, else false)  
-[ n1 -le n2 ]  (true if n1 less then or equal to n2, else false)  
-[ n1 -ne n2 ]  (true if n1 is not same as n2, else false)  
-[ n1 -gt n2 ]  (true if n1 greater then n2, else false)  
-[ n1 -lt n2 ]  (true if n1 less then n2, else false)  
+`[ n1 -eq n2 ]`  (true if n1 same as n2, else false)  
+`[ n1 -ge n2 ]`  (true if n1greater then or equal to n2, else false)  
+`[ n1 -le n2 ]`  (true if n1 less then or equal to n2, else false)  
+`[ n1 -ne n2 ]`  (true if n1 is not same as n2, else false)  
+`[ n1 -gt n2 ]`  (true if n1 greater then n2, else false)  
+`[ n1 -lt n2 ]`  (true if n1 less then n2, else false)  
 
 ### Integer Comparison Example: 
 hello.sh 
@@ -218,17 +223,23 @@ fi
 ```
 
 ## String Comparison Operators: 
-=  compare if two strings are equal  
-!=  compare if two strings are not equal  
--n  evaluate if string length is greater than zero  
--z  evaluate if string length is equal to zero  
+`=`   compare if two strings are equal  
+`!=`  compare if two strings are not equal  
+`-n`  evaluate if string length is greater than zero  
+`-z`  evaluate if string length is equal to zero  
+
+### Note the **[[]]**
+`<`   is less than, in ASCII alphabetical order:             `[[$a < $b]]`
+`<=`  is less than or equal to, in ASCII alphabetical order: `[[$a <= $b]]`
+`>`   is more than, in ASCII alphabetical order:             `[[$a > $b]]`
+`>=`  is more than or equal to, in ASCII alphabetical order: `[[$a >= $b]]` 
 
 Examples:  
-[ s1 = s2 ]  (true if s1 same as s2, else false)  
-[ s1 != s2 ]  (true if s1 not same as s2, else false)  
-[ s1 ]   (true if s1 is not empty, else false)  
-[ -n s1 ]   (true if s1 has a length greater then 0, else false)  
-[ -z s2 ]   (true if s2 has a length of 0, otherwise false)  
+`[ s1 = s2 ]`   (true if s1 same as s2, else false)  
+`[ s1 != s2 ]`  (true if s1 not same as s2, else false)  
+`[ s1 ]`        (true if s1 is not empty, else false)  
+`[ -n s1 ]`     (true if s1 has a length greater then 0, else false)  
+`[ -z s2 ]`     (true if s2 has a length of 0, otherwise false)  
 
 ## String Comparison Example: 
 
@@ -239,6 +250,18 @@ hello.sh
 word = abc
 
 if [$count == "abc"]
+then 
+  echo "count is $count"
+fi 
+```
+
+hello.sh 
+```
+#! /bin/bash 
+
+word = a
+
+if [[$count < "b"]] # note the [[]] here 
 then 
   echo "count is $count"
 fi 
