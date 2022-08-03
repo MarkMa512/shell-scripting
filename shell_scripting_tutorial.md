@@ -314,9 +314,9 @@ fi
 `-e`: if the file exists  
 `-f`: if the file exists, and is a regular file  
 `-d`: if the directory exists  
-`-b`: block special file 
-`-c`: charater special file 
-`-s`: if the file is empty 
+`-b`: block special file  
+`-c`: charater special file  
+`-s`: if the file is empty  
 
 
 ### Character Special File
@@ -324,9 +324,6 @@ a file containing normal text
 
 ### Block Special File 
 binary file, like images, videos etc 
-
-
-
 
 # 7. How to append text to output file 
 
