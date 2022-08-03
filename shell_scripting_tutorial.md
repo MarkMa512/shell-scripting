@@ -179,7 +179,6 @@ echo $#
 
 ```
 if [conditional expression]
-
 then 
     statement 
 fi 
@@ -264,6 +263,29 @@ word = a
 if [[$count < "b"]] # note the [[]] here 
 then 
   echo "count is $count"
+fi 
+```
+
+## if else: 
+```
+if [conditional expression]
+then 
+    statement 
+else
+    statement 
+fi 
+```
+
+## if else if else 
+```
+if [conditional expression]
+then 
+    statement 
+elif
+then
+    statement 
+else
+    statement 
 fi 
 ```
 
