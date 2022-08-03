@@ -75,4 +75,46 @@ echo $my_variable
 
 # 3. Read user input 
 
+### single user input 
+```
+echo "Enter Name: "
+read name
+echo "Entered Name: $name" 
+```
+
+### multi user input 
+```
+echo "Enter Names: "
+read name1 name2 name3
+echo "Entered Names: $name1, $name2, $name3" 
+# when entering the second name, do not press enter 
+```
+
+### Enter input the same line as per the prompt: 
+```
+read -p "Enter Name :" name
+echo "Entered Name : $name"
+```
+
+### Silent import: 
+```
+read -sp "Enter the password: " password1
+read -sp "Enter the password again: " password2
+```
+
+### Multiple input to be stored inside an array: 
+```
+echo "Enter Names: "
+read -a nameArray
+echo "Names : ${nameArray[0]}" 
+# abstract an element by index: {$arrayName[index_number]}
+```
+
+### `read` without any variable name: 
+```
+echo "Enter Name: 
+read 
+echo "Name Entered: $REPLY" 
+```
+
 
