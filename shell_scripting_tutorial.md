@@ -17,7 +17,7 @@ which bash
 
 1. Create the sh file: 
 ```
-touch hello.sh 
+touch hello.sh
 ```
 
 2. edit the sh file: 
@@ -29,7 +29,7 @@ echo "Hellow Word"
 
 3. Enable execute permission: 
 ```
-chmod +x hellow.sh 
+chmod +x hellow.sh
 ```
 
 4. Run the shell script: 
@@ -48,10 +48,10 @@ echo "hello" # another single line comment
 ## 2.2 Variables 
 
 ### System Variables 
-variable name in CAPITAL cases 
+variable name in CAPITAL cases
 
 ```
-echo our shell name is $BASH 
+echo our shell name is $BASH
 ```
 
 ```
@@ -73,7 +73,7 @@ echo the present working directory is $PWD
  - there is no " " before and after the = sign 
  
 ```
-#! /bin/bash 
+#! /bin/bash
 
 my_variable=value 
 echo $my_variable
@@ -83,7 +83,7 @@ echo $my_variable
 
 ### single user input 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 echo "Enter Name: "
 read name
@@ -92,7 +92,7 @@ echo "Entered Name: $name"
 
 ### multi user input 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 echo "Enter Names: "
 read name1 name2 name3
@@ -102,7 +102,7 @@ echo "Entered Names: $name1, $name2, $name3"
 
 ### Enter input the same line as per the prompt: 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 read -p "Enter Name :" name
 echo "Entered Name : $name"
@@ -110,7 +110,7 @@ echo "Entered Name : $name"
 
 ### Silent import: 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 read -sp "Enter the password: " password1
 read -sp "Enter the password again: " password2
@@ -118,7 +118,7 @@ read -sp "Enter the password again: " password2
 
 ### Multiple input to be stored inside an array: 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 echo "Enter Names: "
 read -a nameArray
@@ -128,7 +128,7 @@ echo "Names : ${nameArray[0]}"
 
 ### `read` without any variable name: 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 echo "Enter Name: 
 read 
@@ -139,7 +139,7 @@ echo "Name Entered: $REPLY"
 
 ## Method 1: 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 echo $0 $1 $2 $3 '> $1 $2 $3'
 ```
@@ -156,7 +156,7 @@ output:
 ## Method 2: Pass in as Array
 
 ```
-#! /bin/bash 
+#! /bin/bash
 args = ("$@") 
 echo ${args[0]} ${args[1]} ${args[2]}
 ```
@@ -211,7 +211,7 @@ Examples
 ### Integer Comparison Example: 
 hello.sh 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 count=10 
 
@@ -244,7 +244,7 @@ Examples:
 
 hello.sh 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 word = abc
 
@@ -256,7 +256,7 @@ fi
 
 hello.sh 
 ```
-#! /bin/bash 
+#! /bin/bash
 
 word = a
 
@@ -289,7 +289,43 @@ else
 fi 
 ```
 
-# 6. File test operator 
+# 6. File Test Operator 
+
+file_presence_check.sh 
+```
+#! /bin/bash
+
+echo -e "Enter the name of the file: \c"
+# \c used to keep the cursor on the same line after the echo
+# -e enables interpresation of \c 
+
+read file_name 
+
+if [ -e $file_name ]
+then
+    echo "$file_name is present!" 
+else
+    echo "$file_name not found!" 
+fi 
+```
+
+## Operators: 
+
+`-e`: if the file exists  
+`-f`: if the file exists, and is a regular file  
+`-d`: if the directory exists  
+`-b`: block special file 
+`-c`: charater special file 
+`-s`: if the file is empty 
+
+
+### Character Special File
+a file containing normal text 
+
+### Block Special File 
+binary file, like images, videos etc 
+
+
 
 
 # 7. How to append text to output file 
