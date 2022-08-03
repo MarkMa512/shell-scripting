@@ -69,6 +69,8 @@ echo the present working directory is $PWD
  - there is no " " before and after the = sign 
  
 ```
+#! /bin/bash 
+
 my_variable=value 
 echo $my_variable
 ```
@@ -77,6 +79,8 @@ echo $my_variable
 
 ### single user input 
 ```
+#! /bin/bash 
+
 echo "Enter Name: "
 read name
 echo "Entered Name: $name" 
@@ -84,6 +88,8 @@ echo "Entered Name: $name"
 
 ### multi user input 
 ```
+#! /bin/bash 
+
 echo "Enter Names: "
 read name1 name2 name3
 echo "Entered Names: $name1, $name2, $name3" 
@@ -92,18 +98,24 @@ echo "Entered Names: $name1, $name2, $name3"
 
 ### Enter input the same line as per the prompt: 
 ```
+#! /bin/bash 
+
 read -p "Enter Name :" name
 echo "Entered Name : $name"
 ```
 
 ### Silent import: 
 ```
+#! /bin/bash 
+
 read -sp "Enter the password: " password1
 read -sp "Enter the password again: " password2
 ```
 
 ### Multiple input to be stored inside an array: 
 ```
+#! /bin/bash 
+
 echo "Enter Names: "
 read -a nameArray
 echo "Names : ${nameArray[0]}" 
@@ -112,9 +124,48 @@ echo "Names : ${nameArray[0]}"
 
 ### `read` without any variable name: 
 ```
+#! /bin/bash 
+
 echo "Enter Name: 
 read 
 echo "Name Entered: $REPLY" 
 ```
 
+# 4. Passing Argument to a Bash Script: 
+
+## Method 1: 
+```
+#! /bin/bash 
+
+echo $0 $1 $2 $3 '> $1 $2 $3'
+```
+
+```
+./hello.sh apple banana pear 
+
+# seperate by space 
+```
+output: 
+> ./hello.sh apple banana pear > $1 $2 $3 
+> $0 is the script's name 
+
+## Method 2: Pass in as Array
+
+```
+#! /bin/bash 
+args = ("$@") 
+echo ${args[0]} ${args[1]} ${args[2]}
+```
+
+```
+./hello.sh apple banana pear 
+```
+output: 
+> apple banana pear
+> when passing in as array, ${args[0]} is the first elelement 
+
+### display the number of arguments passed into the bash script: 
+```
+echo $#
+```
 
