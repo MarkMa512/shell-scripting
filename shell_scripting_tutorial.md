@@ -165,7 +165,7 @@ echo ${args[0]} ${args[1]} ${args[2]}
 ./hello.sh apple banana pear 
 ```
 output: 
-> apple banana pear
+> apple banana pear  
 > when passing in as array, ${args[0]} is the first elelement 
 
 ### display the number of arguments passed into the bash script: 
