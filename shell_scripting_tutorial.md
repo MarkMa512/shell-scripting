@@ -178,11 +178,13 @@ echo $#
 ## Basic Structure
 
 ```
-if [conditional expression]
+if [ conditional expression ]
 then 
     statement 
 fi 
 ```
+
+*always leave a space after [ and before ]*
 
 ## Integer Comparison Operators 
 
@@ -327,3 +329,24 @@ binary file, like images, videos etc
 
 # 7. How to append text to output file 
 
+appending_text.sh
+```
+echo -e "Enter the name of the file : \c" 
+read file_name 
+
+if [ -f $file_name ]
+then
+    if [ -w $file_name ]
+    then
+        echo "Type some text to $file_name. To quit, press CTRL+D"
+        cat >> $file_name 
+    else
+        echo "You do not have writing permission to $file_name" 
+    fi 
+else
+    echo "$file_name does not exists" 
+fi 
+```
+
+`cat >` over-write 
+`cat >>` append 
